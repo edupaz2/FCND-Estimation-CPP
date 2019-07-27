@@ -98,3 +98,10 @@ Check function `UpdateFromGPS()`: [source code](./src/QuadEstimatorEKF.cpp#L286-
 <img src="images/scenario11.png" width="500"/>
 </p>
 
+## Step 6 (Adding your controller):
+Substitute que code from previous project.
+
+Success!!
+<p align="center">
+<img src="images/scenario11.step6.png" width="500"/>
+</p>
