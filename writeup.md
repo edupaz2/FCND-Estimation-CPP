@@ -79,7 +79,22 @@ Using the equation from section 7.3.2 of [Estimation for Quadrotors](https://www
 <img src="images/4.1.magnetometer.png" width="500"/>
 </p>
 
-Check function `UpdateFromMag()`: [source code](./src/QuadEstimatorEKF.cpp#L310-L342)
+Check function `UpdateFromMag()`: [source code](./src/QuadEstimatorEKF.cpp#L324-L356)
 
 ### 2. Tune Yaw parameter:
 Parameter `QYawStd`.
+
+## Step 5 (Closed Loop + GPS Update):
+
+### 1. Implement GPS update function:
+Using the equation from section 7.3.1 of [Estimation for Quadrotors](https://www.overleaf.com/read/vymfngphcccj):
+<p align="center">
+<img src="images/5.1.gps.png" width="500"/>
+</p>
+
+Check function `UpdateFromGPS()`: [source code](./src/QuadEstimatorEKF.cpp#L286-L322)
+
+<p align="center">
+<img src="images/scenario11.png" width="500"/>
+</p>
+
