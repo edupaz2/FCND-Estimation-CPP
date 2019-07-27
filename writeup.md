@@ -19,7 +19,7 @@ Class `Math/Quaternion` is handy for this task.
 
 Check function `UpdateFromIMU()`: [source code](./src/QuadEstimatorEKF.cpp#L74-L124)
 
-## Step 3 (Scenario 8):
+## Step 3 (Scenario 8-9):
 Implement the prediction step of the filter.
 
 ### 1. Implement the transition function.
@@ -63,3 +63,9 @@ Check function `Predict()`: [source code](./src/QuadEstimatorEKF.cpp#L234-L284)
 <img src="images/scenario8.1.png" width="500"/>
 </p>
 
+### 4. Tune parameters for covariance prediction:
+Parameters to tune `QPosXYStd` and `QVelXYStd`.
+
+<p align="center">
+<img src="images/scenario8.2.png" width="500"/>
+</p>
