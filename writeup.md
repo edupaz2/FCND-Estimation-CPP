@@ -32,10 +32,10 @@ and knowing that the current state x_t is:
 <img src="images/3.2.state-x_t.png" width="500"/>
 </p>
 
-Check function `PredictState()`: [source code](./src/QuadEstimatorEKF.cpp#L149-L200)
+Check function `PredictState()`: [source code](./src/QuadEstimatorEKF.cpp#L149-L189)
 
 <p align="center">
-<img src="images/scenario8.png" width="500"/>
+<img src="images/scenario8.1.png" width="500"/>
 </p>
 
 ### 2. Calculate partial derivative of body-to-global Rotation matrix:
@@ -44,4 +44,22 @@ Using the equation from section 7.2 of [Estimation for Quadrotors](https://www.o
 <img src="images/3.3.rbg-prime.png" width="500"/>
 </p>
 
-Check function `GetRbgPrime()`: [source code](./src/QuadEstimatorEKF.cpp#L149-L200)
+Check function `GetRbgPrime()`: [source code](./src/QuadEstimatorEKF.cpp#L191-L232)
+
+### 3. Predict the state covariance forward:
+Using the equation from section 7.2 of [Estimation for Quadrotors](https://www.overleaf.com/read/vymfngphcccj):
+<p align="center">
+<img src="images/3.4.covariance.png" width="500"/>
+</p>
+
+and the Predict function for EKF:
+<p align="center">
+<img src="images/3.5.predict.png" width="500"/>
+</p>
+
+Check function `Predict()`: [source code](./src/QuadEstimatorEKF.cpp#L234-L284)
+
+<p align="center">
+<img src="images/scenario8.1.png" width="500"/>
+</p>
+
