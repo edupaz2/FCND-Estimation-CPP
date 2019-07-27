@@ -1,12 +1,12 @@
 # Writeup
 
-## Step 1 (Scenario 6):
+## Step 1 (Sensor Noise):
 Calculate the standard deviation of `MeasuredStdDev_GPSPosXY` and `MeasuredStdDev_AccelXY`.
 <p align="center">
 <img src="images/1.stdev.png" width="500"/>
 </p>
 
-## Step 2 (Scenario 7):
+## Step 2 (Attitude Estimation):
 Use a Non linear filter instead of the default linear one.
 Using the equations from section 7.1.2 of [Estimation for Quadrotors](https://www.overleaf.com/read/vymfngphcccj):
 <p align="center">
@@ -19,7 +19,7 @@ Class `Math/Quaternion` is handy for this task.
 
 Check function `UpdateFromIMU()`: [source code](./src/QuadEstimatorEKF.cpp#L74-L124)
 
-## Step 3 (Scenario 8-9):
+## Step 3 (Prediction Step):
 Implement the prediction step of the filter.
 
 ### 1. Implement the transition function.
@@ -69,3 +69,17 @@ Parameters to tune `QPosXYStd` and `QVelXYStd`.
 <p align="center">
 <img src="images/scenario8.2.png" width="500"/>
 </p>
+
+## Step 4 (Magnetometer Update):
+Add magnetometer information to improve filter's performance heading estimation.
+
+### 1. Implement Magnetometer update function:
+Using the equation from section 7.3.2 of [Estimation for Quadrotors](https://www.overleaf.com/read/vymfngphcccj):
+<p align="center">
+<img src="images/4.1.magnetometer.png" width="500"/>
+</p>
+
+Check function `UpdateFromMag()`: [source code](./src/QuadEstimatorEKF.cpp#L310-L342)
+
+### 2. Tune Yaw parameter:
+Parameter `QYawStd`.
